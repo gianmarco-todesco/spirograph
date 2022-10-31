@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>Spirograph</title>
+    </head>
+    <style>
+        html, body {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+        }
+    </style>
+    <script src="spirograph.js"></script>            
+</head>
+<body>
+    <div class="container">
+        <canvas id="c"></canvas>
+        <div id="info">
+            <h1>SPIROGRAFO</h1>
+            <p>N<sub>1</sub> = <span id="n2-fld">2</span></p>
+            <p>N<sub>2</sub> = <span id="n1-fld">2</span></p>
+            <p>Rapporto</sub> =             
+                <span class="fraction">
+                    <span id="num-fld" class="num">1</span>
+                    <span id="den-fld" class="den">2</span>
+                </span>
+            </p>
+        </div>
+            
+        <div class="slider-container">
+            <p>
+                Numero denti dell'ingranaggio piccolo<br>
+                <input id="n2-fld">
+            </p>    
+            <input id="n2-fld"><br>
+            <input 
+                type="range" 
+                min="1" max="100" 
+                value="50" 
+                class="slider" 
+                id="myRange"
+                oninput="setPDist(this.value*0.01)">
+            <br>
+            <input type="range" 
+                min="0" max="100" 
+                value="50" 
+                class="slider" 
+                id="myRange"
+                oninput="setSpeed(this.value*0.001)"
+            ><br>
+        </div>
+
+    </div>
+</body>
+</html>
